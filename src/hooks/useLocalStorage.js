@@ -20,3 +20,11 @@ export default function useLocalStorage(key, initialValue) {
 
   return [value, setValue]
 }
+
+export function deleteItem(key) {
+  const prefixedKey = PREFIX + key
+
+  if (localStorage.getItem(prefixedKey) != null || localStorage.getItem(prefixedKey) != undefined) {
+    localStorage.removeItem(prefixedKey);
+  }
+}
